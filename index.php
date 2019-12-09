@@ -1,43 +1,47 @@
+<!-- TEST -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Fahrul Dimas</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
+	<title>Fahrul Dimas</title>
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
 
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-    </head>
-	<body>
+</head>
 
-<?php include 'front/header.php' ?>
-<?php include "page.php";?>
-<?php include 'front/footer.php' ?>
+<body>
 
-		<!-- jQuery Plugins -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/main.js"></script>
+	<?php include 'front/header.php' ?>
+	<?php include "page.php"; ?>
+	<?php include 'front/footer.php' ?>
 
-	</body>
+	<!-- jQuery Plugins -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
