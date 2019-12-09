@@ -82,7 +82,6 @@
 
                         <input type="file" name="foto">
                         <input type="checkbox" name="ubah_foto" value="true"> <label style="color: blue; font:16px arial;">Ceklist Jika Ingin Mengubah Foto</label><br>
-
                         <label style="color: red; font:14px Candara; width=30%">Wajib Ukuran 750x450 Pixels</label>
                       </div>
                       <div class="form-group">
