@@ -30,7 +30,7 @@
 								      $offset = ($noPage - 1) * $dataPerPage;
 
 
-					  		$query = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT=4 AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST DESC LIMIT $offset, $dataPerPage"; // Query untuk menampilkan semua data siswa
+					  		$query = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT=4 AND posting.ID_STATUS=1 AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST DESC LIMIT $offset, $dataPerPage"; // Query untuk menampilkan semua data siswa
 					  		$sql = mysqli_query($conn, $query); // Eksekusi/Jalankan query dari variabel $query
 					  		while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
 							?>

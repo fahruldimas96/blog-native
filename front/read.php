@@ -11,8 +11,6 @@
 
 				<!-- row -->
 						<div class="section-post">
-
-
 								<?php if ($row=mysqli_num_rows($query)){ ?>
 								<?php while($row=mysqli_fetch_array($query)){ ?>
 
@@ -33,3 +31,10 @@
 </div>
 <?php } ?>
 <?php } ?>
+						<!-- ad -->
+						<div class="section-row text-center">
+							<a href="#" style="display: inline-block;margin: auto;">
+								<img class="img-responsive" src="assets/img/ad-3.jpg" alt="">
+							</a>
+						</div>
+						<!-- ad -->

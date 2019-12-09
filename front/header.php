@@ -65,7 +65,6 @@
 						<h3>Recent Posts</h3>
 							<?php  
 					  		include "koneksi/config.php";
-
 					  		$query = "SELECT * FROM posting, kategori WHERE posting.ID_KAT AND kategori.ID_KAT=posting.ID_KAT ORDER BY VIEWS DESC LIMIT 5"; // Query untuk menampilkan semua data siswa
 					  		$sql = mysqli_query($conn, $query); // Eksekusi/Jalankan query dari variabel $query
 					  		while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
@@ -76,9 +75,8 @@
 								<h3 class="post-title"><a href="?page=front/read&id=<?php echo ''.$data['ID_POST'].''?>"><?php $namap=$data['JUDUL_POST']; $potong = substr($namap,0,40); echo $potong;?></a></h3>
 							</div>
 						</div>
-											<?php } ?>
+					<?php } ?>
 					</div>
-
 					<!-- /widget posts -->
 					<!-- social links -->
 					<div class="section-row">

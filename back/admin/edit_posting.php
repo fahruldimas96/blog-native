@@ -30,7 +30,7 @@
                  <?php  
       include "../koneksi/config.php";
       $id=$_GET["id"];
-      $query = "SELECT * FROM posting, kategori WHERE ID_POST=$id AND kategori.ID_KAT=posting.ID_KAT";
+      $query = "SELECT * FROM posting, kategori, status WHERE ID_POST=$id AND kategori.ID_KAT=posting.ID_KAT AND status.ID_STATUS=posting.ID_STATUS";
       $result = mysqli_query($conn, $query) or die('Error');
       ?>
             <!-- form start -->
@@ -54,7 +54,23 @@
                         ?>
                         </select>
                         </div>
-                                                  <div class="form-group">
+                        <div class="form-group">
+                        <label class="control-label" for="status">Status</label>
+                        <select name="status" class="form-control" id="status" required>
+                          <option value="<?php echo ''.$row['ID_STATUS'].''?>"><?php echo ''.$row['NAMA_STATUS'].''?></option>
+                        <?php  include "../koneksi/config.php";
+                            $query = "SELECT * FROM status WHERE ID_STATUS";
+                            $result = mysqli_query($conn, $query) or die('Error');
+                            while($data = mysqli_fetch_array($result))
+                              {
+                          ?>
+                            <option value="<?=$data["ID_STATUS"];?>"><?=$data["NAMA_STATUS"];?></option>
+                        <?php
+                        }
+                        ?>
+                        </select>
+                        </div>
+                                                    <div class="form-group">
                                                     <label class="control-label" for="judul">Judul</label>
                                                     <input type="text" name="judul" class="form-control" id="judul" value="<?php echo ''.$row['JUDUL_POST'].''?>"required>
                                                 </div>

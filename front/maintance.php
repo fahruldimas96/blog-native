@@ -14,5 +14,5 @@
 					<div class="col-md-11">
 						<div class="section-row sticky-container">
 							<div class="main-post">
-<h1>SEDANG DALAM PERBAIKAN :)</h1>
+<h1>Sedang dalam perbaikan</h1>
 </div>

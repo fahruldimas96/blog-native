@@ -36,14 +36,15 @@
                                     <tr>
                                         <th>Judul</th>
                                         <th>Penulis</th>
-                                      <th>Tanggal Post</th>
+                                      <th>Posting Date</th>
                                       <th><center><i class="fa fa-eye"></i></center></th>
+                                      <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                				    <tbody>
 								      <?php  include "../koneksi/config.php";
-								      $query = "SELECT * FROM posting, user WHERE user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST ";
+								      $query = "SELECT * FROM posting, user, status WHERE user.ID_ADMIN=posting.ID_ADMIN AND status.ID_STATUS=posting.ID_STATUS ORDER BY ID_POST ";
 								      $result = mysqli_query($conn, $query) or die('Error');
 								      while($data = mysqli_fetch_array($result))
 								        {
@@ -53,6 +54,7 @@
                                         <td><?=$data["NAMA"];?></td>
                                       <td class="center"><?php $date=$data['TGL_POST']; $tgl =  date('F d, Y ( H:i )', strtotime($date)); echo $tgl;?></td>
                                       <td><center><?=$data["VIEWS"];?></center></td>
+                                      <td><center><?=$data["NAMA_STATUS"];?></center></td>
                                         <td>
                                         <div class="btn-group">
 						                  <button type="button" class="btn btn-danger">Action</button>
@@ -118,7 +120,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label" for="title">Title</label>
-                                                    <input type="text" max="50" name="title" class="form-control" id="title" required>
+                                                    <input type="text" name="title" class="form-control" id="title" maxlength="150" required>
                                                 </div>
                                                 <div class="form-group">
 												<label class="control-label" for="foto">Foto</label>
@@ -195,7 +197,7 @@ $path = "../../assets/img/".$fotobaru;
 // Proses upload
 if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
   // Proses simpan ke Database
-  $query = "INSERT INTO posting VALUES(NULL,'".$kategori."','".$penulis."','".$judul."','".$title."','".$fotobaru."','".$isi."',0,current_timestamp())";
+  $query = "INSERT INTO posting VALUES(NULL,'".$kategori."','".$penulis."',1,'".$judul."','".$title."','".$fotobaru."','".$isi."',0,current_timestamp(),current_timestamp())";
   $sql = mysqli_query($conn, $query); // Eksekusi/ Jalankan query dari variabel $query
   if($sql){ // Cek jika proses simpan ke database sukses atau tidak
     // Jika Sukses, Lakukan :

@@ -24,7 +24,7 @@ Copyright &copy;2018-<script>document.write(new Date().getFullYear());</script> 
 									<h3 class="footer-title">Tentang Kami</h3>
 									<ul class="footer-links">
 										<li><a href="#">Tentang</a></li>
-										<li><a href="#">Kontak</a></li>
+										<li><a href="?page=front/kontak">Kontak</a></li>
 									</ul>
 								</div>
 							</div>

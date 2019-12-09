@@ -5,7 +5,7 @@
 			<!-- container -->
 							<?php  
 					  		include "koneksi/config.php";
-					  		$query_limit = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST DESC LIMIT 4"; // Query untuk menampilkan semua data siswa
+					  		$query_limit = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT AND posting.ID_STATUS=1 AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST DESC LIMIT 4"; // Query untuk menampilkan semua data siswa
 					  		$sql_limit = mysqli_query($conn, $query_limit); // Eksekusi/Jalankan query dari variabel $query
 					  		while($data = mysqli_fetch_array($sql_limit)){
 					  		 // Ambil semua data dari hasil eksekusi $sql
@@ -41,7 +41,7 @@
 					</div>
 							<?php  
 					  		include "koneksi/config.php";
-					  		$query_limit = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT='5' AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST DESC LIMIT 6"; // Query untuk menampilkan semua data siswa
+					  		$query_limit = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT='5' AND posting.ID_STATUS=1 AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY ID_POST DESC LIMIT 6"; // Query untuk menampilkan semua data siswa
 					  		$sql_limit = mysqli_query($conn, $query_limit); // Eksekusi/Jalankan query dari variabel $query
 					  		while($data = mysqli_fetch_array($sql_limit)){
 					  		 // Ambil semua data dari hasil eksekusi $sql
@@ -78,7 +78,7 @@
 							</div>
 							<?php  
 					  		include "koneksi/config.php";
-					  		$query_limit = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY VIEWS DESC LIMIT 10"; // Query untuk menampilkan semua data siswa
+					  		$query_limit = "SELECT * FROM posting, kategori, user WHERE posting.ID_KAT AND posting.ID_STATUS=1 AND kategori.ID_KAT=posting.ID_KAT AND user.ID_ADMIN=posting.ID_ADMIN ORDER BY VIEWS DESC LIMIT 10"; // Query untuk menampilkan semua data siswa
 					  		$sql_limit = mysqli_query($conn, $query_limit); // Eksekusi/Jalankan query dari variabel $query
 					  		while($data = mysqli_fetch_array($sql_limit)){
 					  		 // Ambil semua data dari hasil eksekusi $sql

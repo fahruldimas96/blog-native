@@ -5,6 +5,7 @@ include "../koneksi/config.php";
 $id = $_GET['id'];
 // Ambil Data yang Dikirim dari Form
 $kategori = $_POST['kategori'];
+$status = $_POST['status'];
 $judul = $_POST['judul'];
 $title = $_POST['title'];
 $isi = $_POST['isi'];
@@ -32,7 +33,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
       unlink("../image/".$data['FOTO_POST']); // Hapus file foto sebelumnya yang ada di folder images
     
     // Proses ubah data ke Database
-    $query = "UPDATE posting SET ID_KAT='".$kategori."', JUDUL_POST='".$judul."', TITLE_POST='".$title."', ISI='".$isi."', ID_ADMIN='".$penulis."', FOTO_POST='".$fotobaru."' WHERE ID_POST='".$id."'";
+    $query = "UPDATE posting SET ID_KAT='".$kategori."', ID_STATUS='".$status."', JUDUL_POST='".$judul."', TITLE_POST='".$title."', ISI='".$isi."', ID_ADMIN='".$penulis."', FOTO_POST='".$fotobaru."' WHERE ID_POST='".$id."'";
     $sql = mysqli_query($conn, $query); // Eksekusi/ Jalankan query dari variabel $query
     if($sql){ // Cek jika proses simpan ke database sukses atau tidak
       // Jika Sukses, Lakukan :
@@ -49,7 +50,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
   }
 }else{ // Jika user tidak menceklis checkbox yang ada di form ubah, lakukan :
   // Proses ubah data ke Database
-  $query = "UPDATE posting SET ID_KAT='".$kategori."', JUDUL_POST='".$judul."', TITLE_POST='".$title."', ISI='".$isi."', ID_ADMIN='".$penulis."', FOTO_POST='".$foto1."' WHERE ID_POST='".$id."'";
+  $query = "UPDATE posting SET ID_KAT='".$kategori."', ID_STATUS='".$status."', JUDUL_POST='".$judul."', TITLE_POST='".$title."', ISI='".$isi."', ID_ADMIN='".$penulis."', FOTO_POST='".$foto1."' WHERE ID_POST='".$id."'";
   $sql = mysqli_query($conn, $query); // Eksekusi/ Jalankan query dari variabel $query
   if($sql){ // Cek jika proses simpan ke database sukses atau tidak
     // Jika Sukses, Lakukan :
@@ -60,4 +61,3 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
     echo "<br><a href='index.php?page=posting'>Kembali Ke Form</a>";
   }
 }
-?>
